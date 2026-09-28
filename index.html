@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK HOME CARE PVT LTD | Premium Products</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rkBlue: '#1a365d',     // Deep Royal Blue
+                        rkBlueLight: '#2c5282',
+                        rkGold: '#c59b27',     // Premium Gold
+                        rkGoldLight: '#e6c265',
+                        rkBg: '#f8fafc'        // Very light gray/blue for backgrounds
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Cinzel for elegant headings, Montserrat for clean readable text -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom styles for specific effects not easily done with standard Tailwind utility classes */
+        .hero-pattern {
+            background-color: #1a365d;
+            background-image: radial-gradient(#c59b27 0.5px, transparent 0.5px), radial-gradient(#c59b27 0.5px, #1a365d 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.95;
+        }
+        
+        .card-hover:hover .card-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-body text-gray-800 bg-rkBg antialiased flex flex-col min-h-screen">
+
+    <!-- Fixed Header / Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-rkBlue shadow-xl shadow-rkBlue/10 border-b border-rkGold/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo & Brand -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="bg-white p-1 rounded-sm shadow-md h-12 w-12 flex items-center justify-center overflow-hidden border border-rkGold/50 transition-transform group-hover:scale-105">
+                        <embed src="RK LOGO.pdf" type="application/pdf" class="w-full h-full pointer-events-none" title="RK Logo" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-xl md:text-2xl text-rkGold tracking-wider leading-tight">RK HOME CARE</span>
+                        <span class="text-[0.65rem] text-gray-300 font-medium tracking-[0.2em] uppercase">Pvt Ltd</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-white hover:text-rkGold font-medium transition-colors text-sm uppercase tracking-wide">Home</a>
+                    <a href="#about" class="text-white hover:text-rkGold font-medium transition-colors text-sm uppercase tracking-wide">About</a>
+                    <a href="#products" class="text-white hover:text-rkGold font-medium transition-colors text-sm uppercase tracking-wide">Products</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-rkGold text-rkBlue font-bold rounded-md hover:bg-white transition-colors text-sm uppercase tracking-wider shadow-lg">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-rkGold focus:outline-none p-2" aria-label="Menu">
+                        <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-rkBlue border-t border-rkGold/20 absolute w-full shadow-2xl transition-all origin-top">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col text-center">
+                <a href="#home" class="block px-3 py-4 text-base font-medium text-white hover:text-rkBlue hover:bg-rkGold transition-colors border-b border-rkGold/10 mobile-link">Home</a>
+                <a href="#about" class="block px-3 py-4 text-base font-medium text-white hover:text-rkBlue hover:bg-rkGold transition-colors border-b border-rkGold/10 mobile-link">About Us</a>
+                <a href="#products" class="block px-3 py-4 text-base font-medium text-white hover:text-rkBlue hover:bg-rkGold transition-colors border-b border-rkGold/10 mobile-link">Products</a>
+                <a href="#contact" class="block px-3 py-4 text-base font-medium text-rkGold hover:text-white transition-colors mobile-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-rkBlue overflow-hidden flex items-center min-h-[90vh]">
+            <!-- Decorative Background Elements -->
+            <div class="absolute inset-0 bg-gradient-to-br from-rkBlue via-rkBlueLight to-rkBlue opacity-90 z-0"></div>
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-rkGold rounded-full mix-blend-multiply filter blur-[100px] opacity-30 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+                    
+                    <!-- Hero Content -->
+                    <div class="w-full lg:w-3/5 text-center lg:text-left space-y-8">
+                        <div class="inline-flex items-center px-4 py-2 rounded-full border border-rkGold/30 bg-rkGold/10 text-rkGoldLight text-xs md:text-sm font-semibold tracking-widest uppercase backdrop-blur-sm shadow-sm">
+                            <i class="fas fa-shield-alt mr-2"></i> Premium Quality Guaranteed
+                        </div>
+                        
+                        <h1 class="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold text-white leading-tight drop-shadow-lg">
+                            <span class="text-rkGold">CLEAN</span> <span class="text-gray-400 font-light mx-2">|</span> 
+                            <span class="text-rkGold">SAFE</span> <span class="text-gray-400 font-light mx-2">|</span> 
+                            <span class="text-rkGold">PROTECT</span>
+                        </h1>
+                        
+                        <p class="text-xl md:text-2xl lg:text-3xl font-light text-gray-200 italic font-heading">
+                            "Your Hygiene Is Our Commitment."
+                        </p>
+
+                        <p class="text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-body">
+                            Experience the perfect harmony of uncompromising hygiene, traditional flavors, and premium care. Rooted in purity and crafted for your family's well-being.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                            <a href="#products" class="px-8 py-4 bg-rkGold text-rkBlue font-bold rounded-md hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_10px_20px_rgba(197,155,39,0.3)] uppercase tracking-wide text-center">
+                                View Our Products
+                            </a>
+                            <a href="#about" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-md hover:bg-white/10 transition-all uppercase tracking-wide text-center">
+                                Our Story
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual (Responsive Image/Graphic) -->
+                    <div class="w-full lg:w-2/5 mt-10 lg:mt-0 relative hidden md:block">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-rkGold/20 aspect-[4/5] max-w-md mx-auto">
+                            <!-- Using a placeholder tailored to the brand colors, replace with actual product imagery -->
+                            <img src="https://placehold.co/800x1000/1a365d/c59b27?text=RK+Products" alt="Premium Products" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-rkBlue/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white text-center">
+                                <p class="font-heading text-xl font-bold text-rkGold tracking-wider">Janakpurdham's Finest</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 lg:py-28 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-6">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-rkBlue">
+                        About <span class="text-rkGold">Our Heritage</span>
+                    </h2>
+                    <div class="w-24 h-1 bg-rkGold mx-auto rounded-full"></div>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed pt-4">
+                        Situated in the cultural heart of Janakpurdham, RK HOME CARE PVT LTD stands as a beacon of trust, purity, and hygiene. 
+                    </p>
+                    <p class="text-base text-gray-500 leading-relaxed">
+                        We blend time-honored traditional practices with modern safety standards to deliver products that protect your home and delight your senses. Whether it's the gentle touch of our hygiene soaps or the authentic taste of our achars and sweets, we pledge to prioritize your well-being in every batch.
+                    </p>
+                    <div class="pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4">
+                            <i class="fas fa-leaf text-4xl text-rkGold mb-3"></i>
+                            <h3 class="font-bold text-rkBlue text-lg">Pure Ingredients</h3>
+                        </div>
+                        <div class="p-4">
+                            <i class="fas fa-certificate text-4xl text-rkGold mb-3"></i>
+                            <h3 class="font-bold text-rkBlue text-lg">Certified Quality</h3>
+                        </div>
+                        <div class="p-4">
+                            <i class="fas fa-heart text-4xl text-rkGold mb-3"></i>
+                            <h3 class="font-bold text-rkBlue text-lg">Crafted with Care</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-20 lg:py-28 bg-rkBg border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-16 space-y-4">
+                    <span class="text-rkGold font-bold tracking-[0.2em] uppercase text-sm">Our Specialties</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-rkBlue">
+                        Premium Product Line
+                    </h2>
+                    <div class="w-24 h-1 bg-rkGold mx-auto rounded-full mt-4"></div>
+                </div>
+
+                <!-- Product Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Product Card 1: Soaps -->
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover transition-all duration-300 flex flex-col group">
+                        <div class="h-56 bg-blue-50 relative overflow-hidden flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-rkBlue opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
+                            <!-- Placeholder image representing soaps -->
+                            <img src="https://placehold.co/400x300/1a365d/ffffff?text=Hygiene+Soaps" alt="Hygiene Soaps" class="card-img w-full h-full object-cover transition-transform duration-500" />
+                            <div class="absolute top-4 right-4 bg-rkGold text-white text-xs font-bold px-3 py-1 rounded-full uppercase z-20 shadow-md">Protect</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col">
+                            <h3 class="text-2xl font-heading font-bold text-rkBlue mb-3">Hygiene Soaps</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                Formulated to eradicate germs while maintaining the skin's natural moisture. Gentle, safe, and effective for daily family protection.
+                            </p>
+                            <button class="w-full py-3 border-2 border-rkBlue text-rkBlue font-semibold rounded-md hover:bg-rkBlue hover:text-white transition-colors uppercase text-sm tracking-wide">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2: Achar -->
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover transition-all duration-300 flex flex-col group">
+                        <div class="h-56 bg-orange-50 relative overflow-hidden flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-rkGold opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
+                            <!-- Placeholder image representing achar -->
+                            <img src="https://placehold.co/400x300/c59b27/ffffff?text=Authentic+Achar" alt="Authentic Achar" class="card-img w-full h-full object-cover transition-transform duration-500" />
+                            <div class="absolute top-4 right-4 bg-rkBlue text-white text-xs font-bold px-3 py-1 rounded-full uppercase z-20 shadow-md">Traditional</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col">
+                            <h3 class="text-2xl font-heading font-bold text-rkBlue mb-3">Authentic Achar</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                Handcrafted using age-old recipes, premium spices, and pure oils. Bring the authentic, tangy taste of tradition to your dining table.
+                            </p>
+                            <button class="w-full py-3 border-2 border-rkBlue text-rkBlue font-semibold rounded-md hover:bg-rkBlue hover:text-white transition-colors uppercase text-sm tracking-wide">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3: Sweets -->
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover transition-all duration-300 flex flex-col group">
+                        <div class="h-56 bg-amber-50 relative overflow-hidden flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-rkBlue opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10"></div>
+                            <!-- Placeholder image representing sweets -->
+                            <img src="https://placehold.co/400x300/2c5282/ffffff?text=Premium+Sweets" alt="Premium Sweets" class="card-img w-full h-full object-cover transition-transform duration-500" />
+                            <div class="absolute top-4 right-4 bg-rkGold text-white text-xs font-bold px-3 py-1 rounded-full uppercase z-20 shadow-md">Pure</div>
+                        </div>
+                        <div class="p-8 flex-grow flex flex-col">
+                            <h3 class="text-2xl font-heading font-bold text-rkBlue mb-3">Premium Sweets</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                Indulge in purity with our selection of sweet delicacies and raw materials. Crafted with uncompromised hygiene and premium ingredients.
+                            </p>
+                            <button class="w-full py-3 border-2 border-rkBlue text-rkBlue font-semibold rounded-md hover:bg-rkBlue hover:text-white transition-colors uppercase text-sm tracking-wide">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-rkBlue text-white relative border-t-4 border-rkGold">
+        <!-- Decorative subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=')] z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-12">
+                
+                <!-- Brand Col -->
+                <div class="md:col-span-5 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-white p-1 rounded-sm h-12 w-12 flex items-center justify-center">
+                            <embed src="RK LOGO.pdf" type="application/pdf" class="w-full h-full pointer-events-none" />
+                        </div>
+                        <h2 class="text-2xl font-heading font-bold text-rkGold tracking-wider">RK HOME CARE</h2>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-sm">
+                        Delivering uncompromising hygiene, safety, and authentic taste directly to your home. Experience the perfect blend of tradition and modern care.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-rkGold hover:bg-rkGold hover:text-rkBlue transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-rkGold hover:bg-rkGold hover:text-rkBlue transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-rkGold hover:bg-rkGold hover:text-rkBlue transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-lg font-heading font-bold text-rkGold uppercase tracking-wide">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center"><i class="fas fa-chevron-right text-rkGold text-xs mr-2"></i> Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center"><i class="fas fa-chevron-right text-rkGold text-xs mr-2"></i> About Us</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-white transition-colors text-sm flex items-center"><i class="fas fa-chevron-right text-rkGold text-xs mr-2"></i> Our Products</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="md:col-span-4 space-y-6">
+                    <h3 class="text-lg font-heading font-bold text-rkGold uppercase tracking-wide">Get in Touch</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-rkGold mt-1 mr-3 text-lg"></i>
+                            <span class="text-gray-300 text-sm leading-relaxed">
+                                Janakpurdham -1,<br>
+                                Sita chowk<br>
+                                Nepal
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-rkGold mr-3 text-lg"></i>
+                            <a href="mailto:info@rkhomecare.com.np" class="text-gray-300 hover:text-white text-sm transition-colors">info@rkhomecare.com.np</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-rkGold mr-3 text-lg"></i>
+                            <span class="text-gray-300 text-sm">+977 (0) XX-XXXXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar: Exact phrase required -->
+            <div class="border-t border-white/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <p class="text-sm text-gray-400">
+                    &copy; <span id="currentYear"></span> RK HOME CARE PVT LTD. All rights reserved.
+                </p>
+                <p class="text-sm text-gray-400 font-medium bg-rkBlueLight/30 px-4 py-2 rounded-full border border-white/5">
+                    Designed by <span class="text-rkGold font-bold tracking-wide">RK HOME CARE PVT LTD</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Dynamic Year for Footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle Logic
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Toggle Icon between Hamburger and Close (X)
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-times');
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            // Close mobile menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Navbar visual change on scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('bg-rkBlue/95', 'backdrop-blur-md');
+                    navbar.classList.remove('bg-rkBlue');
+                } else {
+                    navbar.classList.add('bg-rkBlue');
+                    navbar.classList.remove('bg-rkBlue/95', 'backdrop-blur-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
